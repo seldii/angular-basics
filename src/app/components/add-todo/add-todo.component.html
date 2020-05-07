@@ -1,5 +1,20 @@
-<form class='add-todo-form' (ngSubmit) ='onSubmit()'>
-    <input type='text' name='title' [(ngModel)]='title' 
-    placeholder="Add todo..."/>
-    <input value='Submit'  type='submit' class='btn' />
+<form class="add-todo-form" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    name="title"
+    nz-input
+    nzSize="large"
+    [(ngModel)]="title"
+    placeholder="Add todo..."
+  />
+  <button
+    nz-button
+    nzType="primary"
+    nzSize="large"
+    nzGhost
+    type="submit"
+    class="btn"
+  >
+    Submit
+  </button>
 </form>

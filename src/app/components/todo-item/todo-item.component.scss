@@ -1,0 +1,35 @@
+.delete-button {
+    margin-left: 5px;
+    border: none;
+}
+
+.todo {
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 5px 0px;
+    background-color: lightgreen;
+    border-bottom: 1px solid lightslategrey;
+    input[type="checkbox"] {
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+        background-color: greenyellow;
+        justify-self: center;
+        align-self: center;
+    }
+    span {
+        font-size: 25px;
+    }
+}
+
+.is-completed {
+    span {
+        text-decoration: line-through;
+    }
+
+    background-color: lightsalmon;
+}

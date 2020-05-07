@@ -1,8 +1,8 @@
-
-<app-add-todo ></app-add-todo>
-<app-todo-item 
-*ngFor="let todo of todos"
-(deleteTodo)="deleteTodo($event)"
+<app-add-todo (addTodo)="addTodo($event)"> </app-add-todo>
+<app-todo-item
+  *ngFor="let todo of todos"
+  [todo]="todo"
+  (deleteTodo)="deleteTodo($event)"
+  (toggleCompleted)="toggleCompleted($event)"
 >
 </app-todo-item>
-

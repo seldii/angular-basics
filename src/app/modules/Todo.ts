@@ -1,5 +1,5 @@
 export class Todo{
-id:string;
+$key:string;
 title:string;
 completed:boolean
 }
