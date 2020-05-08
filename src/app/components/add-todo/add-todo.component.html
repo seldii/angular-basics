@@ -1,11 +1,12 @@
-<form class="add-todo-form" (ngSubmit)="onSubmit()">
+<form class="add-todo-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <input
     type="text"
     name="title"
     nz-input
     nzSize="large"
-    [(ngModel)]="title"
+    ngModel
     placeholder="Add todo..."
+    required
   />
   <button
     nz-button

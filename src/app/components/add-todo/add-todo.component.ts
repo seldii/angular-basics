@@ -14,12 +14,16 @@ export class AddTodoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  onSubmit(form) {
+
     const newTodo = {
-      title: this.title,
+      title: form.value.title,
       completed: false,
     };
 
-    this.addTodo.emit(newTodo);
+    if(form.valid){
+       this.addTodo.emit(newTodo);
+    }
+   
   }
 }

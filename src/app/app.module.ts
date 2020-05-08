@@ -7,6 +7,22 @@ import {
   AngularFireDatabaseModule,
   AngularFireDatabase,
 } from '@angular/fire/database';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import {
+  NzButtonModule,
+  NzInputModule,
+  NzIconModule,
+  NzCheckboxModule,
+  NzSwitchModule,
+  NzMenuModule,
+  NzLayoutModule } from 'ng-zorro-antd';
+
+
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
@@ -15,16 +31,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './components/pages/about/about.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { TodoService } from './services/todo.service';
 
 registerLocaleData(en);
 
@@ -50,8 +57,10 @@ registerLocaleData(en);
     NzIconModule,
     NzCheckboxModule,
     NzSwitchModule,
+    NzMenuModule,
+    NzLayoutModule
   ],
-  providers: [AngularFireDatabase, { provide: NZ_I18N, useValue: en_US }],
+  providers: [AngularFireDatabase, { provide: NZ_I18N, useValue: en_US }, TodoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
